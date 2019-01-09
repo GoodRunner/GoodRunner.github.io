@@ -10,3 +10,5 @@ Hello ! There is my blog
 </details>
 
 [消息中间件的作用](https://github.com/GoodRunner/java-pack/tree/master/mq)
+
+[springboot + mybatis的多数据源配置](https://github.com/GoodRunner/java-pack/blob/master/mybatis/MultiDataSource.MD)
