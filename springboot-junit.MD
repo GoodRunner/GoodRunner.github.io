@@ -97,3 +97,24 @@ test {
 }
 ```
 
+5. 统一测试和`maven`的集成
+
+需要添加`maven-surefire-plugin`,如果你执行过`mvn test`或者执行其他`maven`命令时跑了测试用例，你就已经用过`maven-surefire-plugin`了。`maven-surefire-plugin`是`maven`里执行测试用例的插件，不显示配置就会用默认配置。如果需要其他配置就需要显示配置。把`include`指向你的总的测试文件就行。
+
+```text
+ <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/AllTests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
