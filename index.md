@@ -16,3 +16,5 @@ Hello ! There is my blog
 [SpringBoot2.0 配置mynatis多数据源](https://github.com/GoodRunner/java-pack/blob/master/mybatis/MultiDataSource.MD)
 
 [springBoot的单元测试配置](https://github.com/GoodRunner/GoodRunner.github.io/blob/master/springboot-junit.MD)
+
+[java和Go基本数据类型比较](https://github.com/GoodRunner/GoodRunner.github.io/blob/master/javaAndGoDataTypeCompare.md)
