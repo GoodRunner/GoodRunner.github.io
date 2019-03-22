@@ -24,5 +24,18 @@ java是我的老本行语言，所以对比着java来学习Go语言，先从最�
 |              |                                       | unitptr    | 无符号整型，用于存放一个指针          |
 | String       | 不可变类                              | string     | 不可变                                |
 | char         | 单一的 16 位 Unicode 字符             |            |                                       |
+|              |                                       | complex64  |                                       |
+|              |                                       | complex128 |                                       |
 
 由此可见Go语言的数据类型还是比较丰富的，并且还有指针这个java没有的数据类型。
+
+#### 引用数据类型
+
+| 类型 | java                                      | go                                                 | 备注                 |
+| ---- | ----------------------------------------- | -------------------------------------------------- | -------------------- |
+| 数组 | String[] s = {"str","str"}                | var s = []string{"str","str"}                      |                      |
+| list | List<String> list = new ArrayList<>();    | var list = list.New()                              | go的list可以左插右插 |
+| map  | Map<String,Object> map = new HashMap<>(); | var map_variable map[key_data_type]value_data_type | go的map需要make一下  |
+| set  | HashSet、TreeSet                          |                                                    |                      |
+|      |                                           |                                                    |                      |
+
