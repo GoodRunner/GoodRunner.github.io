@@ -40,7 +40,7 @@ DELETE /mydata/student/1
 只会修改doc中指定的属性的值
 
 ```
-POST /mydata/student/1_update
+POST /mydata/student/1/_update
 {"doc":{"name":"haha"}}
 ```
 
