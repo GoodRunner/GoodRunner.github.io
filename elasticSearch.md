@@ -44,8 +44,6 @@ POST /mydata/student/1/_update
 {"doc":{"name":"haha"}}
 ```
 
-
-
 #### 查询数据
 
 ```
@@ -54,3 +52,22 @@ GET /mydata/student/1 查询一个
 GET /mydata/student/_search  查询student表中所有的
 ```
 
+#### 分页查询
+`from`是指偏移量，`size`是指每页大小
+```text
+GET /ielts/paper/_search
+{
+  "from":"0",
+  "size":"1"
+}
+
+```
+
+#### 返回指定列
+其中`source`是返回指定列明的数组
+```text
+GET /ielts/paper/_search
+{
+  "_source": ["name"]
+}
+```
