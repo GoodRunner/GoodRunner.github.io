@@ -71,3 +71,50 @@ GET /ielts/paper/_search
   "_source": ["name"]
 }
 ```
+
+#### 匹配查询
+相当于`sql`中`where`后面的
+```text
+GET /bank/_search
+{
+  "query": { "match": { "account_number": 20 } }
+}
+这条语句返回account_number是20的记录
+```
+
+```text
+GET /bank/_search
+{
+  "query": { "match": { "address": "mill" } }
+}
+这条语句返回address包含mill的记录
+```
+
+```text
+GET /bank/_search
+{
+  "query": { "match": { "address": "mill lane" } }
+}
+这条语句返回address包含mill或者（or）lane的记录
+```
+
+```text
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "address": "mill" } },
+        { "match": { "address": "lane" } }
+      ]
+    }
+  }
+}
+这条语句返回address包含mill和lane的记录
+```
+
+以上我们可以看到我们使用了bool查询，可以将一下小的查询组装成一个更大的查询语句。
+
+介绍一下`bool`查询
+
+![https://user-images.githubusercontent.com/10717670/58622560-75225880-82fe-11e9-9cd7-3b65c07a3716.png](bool)
