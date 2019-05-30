@@ -117,4 +117,4 @@ GET /bank/_search
 
 介绍一下`bool`查询
 
-![https://user-images.githubusercontent.com/10717670/58622560-75225880-82fe-11e9-9cd7-3b65c07a3716.png](bool)
+![bool query](https://user-images.githubusercontent.com/10717670/58622560-75225880-82fe-11e9-9cd7-3b65c07a3716.png)
