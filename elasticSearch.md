@@ -115,6 +115,8 @@ GET /bank/_search
 
 以上我们可以看到我们使用了bool查询，可以将一下小的查询组装成一个更大的查询语句。
 
+
 介绍一下`bool`查询
 
+[传送门](https://www.elastic.co/guide/en/elasticsearch/reference/7.1/query-dsl-bool-query.html)
 ![bool query](https://user-images.githubusercontent.com/10717670/58622560-75225880-82fe-11e9-9cd7-3b65c07a3716.png)
