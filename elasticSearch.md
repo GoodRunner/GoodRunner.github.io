@@ -1,5 +1,9 @@
 ### Elasticsearch 入门
 
+简介
+
+Elasticsearch是一个高度可扩展的开源全文搜索和分析引擎
+
 先介绍一些基本概念
 
 | ElasticSearch概念 | Mysql 概念 | 说明                               |
