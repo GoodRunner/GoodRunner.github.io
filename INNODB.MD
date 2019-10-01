@@ -57,7 +57,14 @@ alter table tname
 
 **HASH分区**
 > 根据用户自定义的表达式的返回值来进行分区，返回值不能是负数。哈希分区是的目的是将数据均匀的分不到预先定义的各个分区中，保证各个分区中的数据数量大致都是一样的
-
+```sql
+create table tname (
+	id int PRIMARY KEY AUTO_INCREMENT,
+	name varchar(20)
+	)
+	PARTITION by HASH (id)
+	partitions 3;
+```
 
 
 **KEY分区**
