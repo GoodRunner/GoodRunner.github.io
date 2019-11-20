@@ -20,8 +20,20 @@ Hello ! There is my blog
 [java和Go基本数据类型比较](https://github.com/GoodRunner/GoodRunner.github.io/blob/master/javaAndGoDataTypeCompare.md)
 
 <details>
-    <summary>ElasticSearch博客集合</summary>
+    <summary>ElasticSearch</summary>
     <ul>
         <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticSearch.md'>ElasticSearch入门</a></li>
+    </ul>
+    <ul>
+        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/倒排索引.MD'>倒排索引</a></li>
+    </ul>
+</details>
+<details>
+    <summary>Kafka</summary>
+    <ul>
+        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticSearch.md'>ElasticSearch入门</a></li>
+    </ul>
+    <ul>
+        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/倒排索引.MD'>倒排索引</a></li>
     </ul>
 </details>
