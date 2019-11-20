@@ -25,15 +25,27 @@ Hello ! There is my blog
         <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticSearch.md'>ElasticSearch入门</a></li>
     </ul>
     <ul>
+        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/分片.MD'>分片</a></li>
+    </ul>
+    <ul>
+        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/mapping.MD'>mapping</a></li>
+    </ul>
+    <ul>
         <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/倒排索引.MD'>倒排索引</a></li>
+    </ul>
+    <ul>
+        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/集群.MD'>集群</a></li>
     </ul>
 </details>
 <details>
     <summary>Kafka</summary>
     <ul>
-        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticSearch.md'>ElasticSearch入门</a></li>
+        <li><a href='https://github.com/GoodRunner/java-pack/blob/master/mq/KAFKA.MD'>kafka</a></li>
     </ul>
     <ul>
-        <li><a href='https://github.com/GoodRunner/GoodRunner.github.io/blob/master/elasticsearch/倒排索引.MD'>倒排索引</a></li>
+        <li><a href='https://github.com/GoodRunner/java-pack/blob/master/mq/KAFKA_CONFIG.MD'>配置</a></li>
+    </ul>
+    <ul>
+        <li><a href='https://github.com/GoodRunner/java-pack/blob/master/mq/KAFKA_PRODUCER.MD'>生产者、消费者</a></li>
     </ul>
 </details>
