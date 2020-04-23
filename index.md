@@ -13,6 +13,8 @@ Hello ! There is my blog
 
 [消息中间件的作用](https://github.com/GoodRunner/java-pack/tree/master/mq)
 
+[java 1.8 中的HashMap]()  
+
 [java异常架构](https://github.com/GoodRunner/GoodRunner.github.io/blob/master/java_exception.MD)
 
 [SpringBoot2.0 配置mynatis多数据源](https://github.com/GoodRunner/java-pack/blob/master/mybatis/MultiDataSource.MD)
