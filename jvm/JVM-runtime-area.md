@@ -114,13 +114,13 @@ See §5 (Loading, Linking, and Initializing) for information about the construct
 
 按照线程私有和线程共享划分
 
-**线程私有：**虚拟机栈、本地方法栈、pc计数器。
+**线程私有：** 虚拟机栈、本地方法栈、pc计数器。
 
-**线程共享：**堆、方法区、运行时常量池。
+**线程共享：** 堆、方法区、运行时常量池。
 
 直接内存，jvm并不直接管理直接内存但是可以使用直接内存，
 
-![]()
+![C位](./img/jvm/c_location.png)
 
 
 

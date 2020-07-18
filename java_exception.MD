@@ -6,7 +6,7 @@
 
 其中，`Error`和`RuntimeException`及其子类成为`未检查异常`（unchecked），其它异常成为`已检查异常`（checked）。   
 
-![exception](/img/java_exception.jpeg)  
+![exception](./img/java_exception.jpeg)  
 
 > Spring事物以及配置  
 
