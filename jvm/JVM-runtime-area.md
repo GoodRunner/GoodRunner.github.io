@@ -6,7 +6,7 @@
 
 正确理解`jvm`运行时数据区是理解`jvm`底层设计的关键步骤，下图可以看出`jvm内存结构`处于`jvm`知识体系的`C`位。
 
-![C位](../img/jvm/c_location.png)
+![C位](../img/jvm/c-location.png)
 
 #### 正文
 
@@ -120,9 +120,18 @@ See §5 (Loading, Linking, and Initializing) for information about the construct
 
 直接内存，jvm并不直接管理直接内存但是可以使用直接内存，
 
-![C位](./img/jvm/c_location.png)
+![C位](../img/jvm/jiegou.png)
 
+#### 接下来
+上面说了虚拟机栈中存放的是`frame(栈帧)` 那么栈帧都包括什么呢？  
 
+**Frames**
+```$xslt
+A frame is used to store data and partial results, as well as to perform dynamic linking, return values for methods, and dispatch exceptions.
+
+A new frame is created each time a method is invoked. A frame is destroyed when its method invocation completes, whether that completion is normal or abrupt (it throws an uncaught exception). Frames are allocated from the Java Virtual Machine stack (§2.5.2) of the thread creating the frame. Each frame has its own array of local variables (§2.6.1), its own operand stack (§2.6.2), and a reference to the run-time constant pool (§2.5.5) of the class of the current method.
+```
+释：虚拟机栈帧用来存储数据和部分结果，执行动态链接，返回方法值和调度异常，每当方法调用会创建栈帧，当方法调用完栈帧就会销毁。每个帧都有其自己的局部变量数组，自己的操作数堆栈以及对当前方法类的运行时常量池的引用，
 
 
 
