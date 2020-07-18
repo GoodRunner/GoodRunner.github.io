@@ -120,7 +120,7 @@ See §5 (Loading, Linking, and Initializing) for information about the construct
 
 直接内存，jvm并不直接管理直接内存但是可以使用直接内存，
 
-![C位](../img/jvm/jiegou.png)
+![jiegou](https://user-images.githubusercontent.com/10717670/87854556-5d17f900-c945-11ea-811c-54792830e868.png)
 
 #### 接下来
 上面说了虚拟机栈中存放的是`frame(栈帧)` 那么栈帧都包括什么呢？  
