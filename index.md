@@ -73,4 +73,6 @@ Hello ! There is my blog
     <ul>
         <li><a href='https://github.com/GoodRunner/java-pack/blob/master/mq/KAFKA_PRODUCER.MD'>生产者、消费者</a></li>
     </ul>
-</details>
+</details>  
+
+[bitmap](https://github.com/GoodRunner/GoodRunner.github.io/blob/master/bitmap.MD)
