@@ -1,0 +1,117 @@
+package com.example.demo.util;
+
+import javax.crypto.Cipher;
+
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
+import java.security.KeyFactory;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class RSAUtil {
+
+    public static final String RSA_ALGORITHM = "RSA"; // ALGORITHM ['ælgərɪð(ə)m] 算法的意思
+    public static final int KEY_SIZE = 2048;
+
+    public static Map<String, String> createKeys() {
+
+        /** RSA要求有一个可信任的随机数据源*/
+        SecureRandom sr = new SecureRandom();
+
+        // 为RSA算法创建一个KeyPairGenerator对象
+        KeyPairGenerator kpg;
+        try {
+            kpg = KeyPairGenerator.getInstance(RSA_ALGORITHM);
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalArgumentException("No such algorithm-->[" + RSA_ALGORITHM + "]");
+        }
+
+        // 初始化KeyPairGenerator对象,密钥长度
+        kpg.initialize(KEY_SIZE, sr);
+        // 生成密匙对
+        KeyPair keyPair = kpg.generateKeyPair();
+        // 得到公钥
+        Key publicKey = keyPair.getPublic();
+        String publicKeyStr = new String(Base64.getEncoder().encode(publicKey.getEncoded()), StandardCharsets.UTF_8);
+        // 得到私钥
+        Key privateKey = keyPair.getPrivate();
+        String privateKeyStr = new String(Base64.getEncoder().encode(privateKey.getEncoded()), StandardCharsets.UTF_8);
+
+        // map装载公钥和私钥
+        Map<String, String> keyPairMap = new HashMap<String, String>();
+        keyPairMap.put("publicKey", publicKeyStr);
+        keyPairMap.put("privateKey", privateKeyStr);
+        // 返回map
+        return keyPairMap;
+    }
+
+    /**
+     * 公钥加密
+     * @param data
+     * @param publicKey
+     * @return
+     */
+    public static String publicEncrypt(String data, String publicKey) {
+        try {
+            //base64编码的公钥
+            byte[] decoded = Base64.getDecoder().decode(publicKey.getBytes(StandardCharsets.UTF_8));
+            RSAPublicKey pubKey = (RSAPublicKey) KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(decoded));
+            Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
+            cipher.init(Cipher.ENCRYPT_MODE, pubKey);
+            return new String(Base64.getEncoder().encode(cipher.doFinal(data.getBytes(StandardCharsets.UTF_8))), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            throw new RuntimeException("加密字符串[" + data + "]时遇到异常", e);
+        }
+    }
+
+    /**
+     * 私钥解密
+     * @param data
+     * @param privateKey
+     * @return
+     */
+    public static String privateDecrypt(String data, String privateKey) {
+        try {
+            byte[] dataDecode = Base64.getDecoder().decode(data.getBytes(StandardCharsets.UTF_8));
+            byte[] privateKeyDecode = Base64.getDecoder().decode(privateKey.getBytes(StandardCharsets.UTF_8));
+
+            RSAPrivateKey priKey = (RSAPrivateKey) KeyFactory.getInstance(RSA_ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(privateKeyDecode));
+            Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
+            cipher.init(Cipher.DECRYPT_MODE, priKey);
+            String outStr = new String(cipher.doFinal(dataDecode), StandardCharsets.UTF_8);
+            return outStr;
+        } catch (Exception e) {
+            throw new RuntimeException("解密字符串[" + data + "]时遇到异常", e);
+        }
+    }
+
+    // 简单测试____________
+    public static void main(String[] args) throws Exception {
+        Map<String, String> keyMap = RSAUtil.createKeys();
+        String publicKey = keyMap.get("publicKey");
+        String privateKey = keyMap.get("privateKey");
+        System.out.println("公钥: \n\r" + publicKey);
+        System.out.println("私钥： \n\r" + privateKey);
+
+        //String str = "sunxiaojun199210245354";
+        String str = "站在大明门前守卫的禁卫军，事先没有接到有关的命令，但看到大批盛装的官员来临，也就以为确系举行大典，因而未加询问。进大明门即为皇城。";
+        System.out.println("\r明文：\r\n" + str);
+
+        String encodedData = RSAUtil.publicEncrypt(str, publicKey);  //传入明文和公钥加密,得到密文
+        System.out.println("密文：\r\n" + encodedData);
+        String decodedData = RSAUtil.privateDecrypt(encodedData, privateKey); //传入密文和私钥,得到明文
+        System.out.println("解密后文字: \r\n" + decodedData);
+
+    }
+
+}
