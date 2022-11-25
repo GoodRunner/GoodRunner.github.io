@@ -1,0 +1,13 @@
+
+-- docker run --name=mysql --restart=always --net=host  -e MYSQL_ROOT_PASSWORD=123456  -p 3306:3306  -d mysql/mysql-server:8.0.22
+docker run --name=mysql -e MYSQL_ROOT_PASSWORD=123456  -p 3306:3306 -v /Users/wupeiqun/mysqldata/data:/var/lib/mysql -v /Users/wupeiqun/mysqldata/conf:/etc/mysql/conf.d  -d mysql/mysql-server:8.0.22
+-- 启动完之后如果客户端连接不上，需要以下操作
+-- 进入容器 docker exec -it mysql bash， 登录mysql:  mysql -uroot -p ; 修改权限use mysql;update user set host='%' where user='root'; flush privileges;
+
+
+docker run -d --name srs --restart=always   -p 1935:1935   -v /etc/localtime:/etc/localtime -v /Users/wupeiqun/srstest/srs.conf:/usr/local/srs/conf/srs.conf -v /Users/wupeiqun/srstest/srs.conf:/usr/local/srs/conf/docker.conf -v /Users/wupeiqun/srstest/dvr:/home/work/dvr  -v /Users/wupeiqun/srstest/logs:/usr/local/srs/logs  ossrs/srs:v4
+
+
+
+
+docker run --name nginx -p 8080:80 -v /Users/wupeiqun/nginxdata/nginx.conf:/etc/nginx/nginx.conf  -v /Users/wupeiqun/nginxdata/log:/var/log/nginx  -d nginx:mainline
